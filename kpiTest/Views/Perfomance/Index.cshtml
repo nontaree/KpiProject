@@ -137,77 +137,79 @@
                                     </thead>
                                     <tbody>
                                         @*@foreach (var item in Model)
-                                        {*@
-                                            <tr>
-                                                <td class="text-center">1.1</td>
+        {*@
+                                        @*@using (Html.BeginForm("ActionRoute", "Perfomance", new { RefNo = @ViewBag.KP, FormMethod.Post }))
+                                         {*@
+                                    <tr>
+                                        <td class="text-center">1.1</td>
 
-                                                <td>
-                                                    <b>ภาระงานสอนในรอบการประเมิน</b>อันนี้ตัว kpi_perfomancekey ตัวระดับ kpi_performancelevel
+                                        <td>
+                                            <b>ภาระงานสอนในรอบการประเมิน</b>อันนี้ตัว kpi_perfomancekey ตัวระดับ kpi_performancelevel
 
-                                                    <br>
-                                                    <div class="form-group row">
-                                                        <div class="col-md-9 col-form-label">
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
-                                                                <label class="form-check-label" for="radio1">
-                                                                    ระดับที่ 1 เท่ากับภาระงานสองขั้นต่ำ
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
-                                                                <label class="form-check-label" for="radio2">
-                                                                    ระดับที่ 2 เพิ่มขึ้นจากระดับที่ 1 อีกไม่เกิน 1 หน่วยภาระงาน
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
-                                                                <label class="form-check-label" for="radio3">
-                                                                    ระดับที่ 3 เพิ่มขึ้นจากระดับที่ 2 อีกไม่เกิน 1 หน่วยภาระงาน
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
-                                                                <label class="form-check-label" for="radio3">
-                                                                    ระดับที่ 4 เพิ่มขึ้นจากระดับที่ 3 อีกไม่เกิน 1 หน่วยภาระงาน
-                                                                </label>
-                                                            </div>
-                                                            <div class="form-check">
-                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
-                                                                <label class="form-check-label" for="radio3">
-                                                                    ระดับที่ 5 เพิ่มขึ้นจากระดับที่ 4
-                                                                </label>
-                                                            </div>
-                                                        </div>
+                                            <br>
+                                            <div class="form-group row">
+                                                <div class="col-md-9 col-form-label">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                        <label class="form-check-label" for="radio1">
+                                                            ระดับที่ 1 เท่ากับภาระงานสองขั้นต่ำ
+                                                        </label>
                                                     </div>
-                                                </td>
-
-                                                <td>
-                                                    <input type="text" class="form-control" id="name">
-                                                </td>
-
-                                                <td>
-                                                    <input type="text" class="form-control" id="name">
-                                                </td>
-                                            </tr>
-                                        @*}*@
-
-
-                                        <tr>
-                                            <td colspan="4">
-                                                <div id="exampleAccordion" data-children=".item">
-                                                    <div class="item">
-                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
-                                                            <b style="color:red;">หมายเหตุ</b>
-                                                        </a>
-                                                        <div id="exampleAccordion1" class="collapsed collapse" role="tabpanel">
-                                                            <p class="mb-3">
-                                                                1. ภาระงานที่เพิ่มจากภาระงานสอนขั้นต่ำต้องเป็นภาระงานสอนที่ไม่รับค่าตอบแทน
-                                                            </p>
-                                                        </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                        <label class="form-check-label" for="radio2">
+                                                            ระดับที่ 2 เพิ่มขึ้นจากระดับที่ 1 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                        <label class="form-check-label" for="radio3">
+                                                            ระดับที่ 3 เพิ่มขึ้นจากระดับที่ 2 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                        <label class="form-check-label" for="radio3">
+                                                            ระดับที่ 4 เพิ่มขึ้นจากระดับที่ 3 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                        <label class="form-check-label" for="radio3">
+                                                            ระดับที่ 5 เพิ่มขึ้นจากระดับที่ 4
+                                                        </label>
                                                     </div>
                                                 </div>
-                                            </td>
-                                        </tr>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <input type="text" class="form-control" id="name">
+                                        </td>
+
+                                        <td>
+                                            <input type="text" class="form-control" id="name">
+                                        </td>
+                                    </tr>
+                                    @*}*@
+
+
+                                    <tr>
+                                        <td colspan="4">
+                                            <div id="exampleAccordion" data-children=".item">
+                                                <div class="item">
+                                                    <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                        <b style="color:red;">หมายเหตุ</b>
+                                                    </a>
+                                                    <div id="exampleAccordion1" class="collapsed collapse" role="tabpanel">
+                                                        <p class="mb-3">
+                                                            1. ภาระงานที่เพิ่มจากภาระงานสอนขั้นต่ำต้องเป็นภาระงานสอนที่ไม่รับค่าตอบแทน
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
 
                                     </tbody>
                                 </table>

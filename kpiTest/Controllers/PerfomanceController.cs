@@ -139,11 +139,14 @@ namespace kpiTest.Controllers
                 test.Add(new SelectListItem { Text = n.KPM_Event, Value = n.KPM_ID.ToString() });
             }
             ViewBag.EventKpi = (IEnumerable<SelectListItem>)test;
+
+            TempData["CL_REF_NO_TEMP"] = cLIS_HEADER.CL_REFERENCE_NO;
+            //var refNo = (string)TempData["CL_REF_NO_TEMP"];
+            //ViewBag.KP = TempData["CL_REF_NO_TEMP"];
+
             ////DrowdownList Page Create : kpievent
             //var kpievent = db.kpi_Perfomance.ToDictionary(c => c.KPM_ID, c => c.KPM_ID + "\xA0\xA0" + c.KPM_Event);
             //ViewData["eventkpi"] = new SelectList(kpievent, "Key", "Value");
-
-            //Debug.WriteLine(ViewData["eventkpi"]);
 
 
 
