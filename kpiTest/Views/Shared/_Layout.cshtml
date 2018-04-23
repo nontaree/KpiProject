@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KPI</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico">
+
+    <!-- Switchery css -->
+    <link href="/Content/plugins/switchery/switchery.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Awesome CSS -->
+    <link href="/Content/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="/Content/css/style.css" rel="stylesheet" type="text/css" />
+
+    <!-- BEGIN CSS for this page -->
+    <!-- END CSS for this page -->
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Taviraj&amp;subset=thai" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Taviraj', serif;
+        }
+    </style>
+
+</head>
+<body>
+
+    @Html.Partial("_Navigation")
+
+    <!-- Left Sidebar-->
+    <div class="left main-sidebar">
+        <div class="sidebar-inner leftscroll">
+            <div id="sidebar-menu">
+                @Html.Partial("_Sidebar")
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- End Sidebar -->
+    <!--content-page-->
+    <div class="content-page">
+
+        <!-- Start content -->
+        <div class="content">
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="breadcrumb-holder">
+                            @*<h1 class="main-title float-left">Dashboard</h1>*@
+                            @Html.Partial("_BreadCrumb")
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                        @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="/Content/js/modernizr.min.js"></script>
+    <script src="/Content/js/jquery.min.js"></script>
+    <script src="/Content/js/moment.min.js"></script>
+
+    <script src="/Content/js/popper.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+
+    <script src="/Content/js/detect.js"></script>
+    <script src="/Content/js/fastclick.js"></script>
+    <script src="/Content/js/jquery.blockUI.js"></script>
+    <script src="/Content/js/jquery.nicescroll.js"></script>
+    <script src="/Content/js/jquery.scrollTo.min.js"></script>
+    <script src="/Content/plugins/switchery/switchery.min.js"></script>
+
+    <!-- App js -->
+    <script src="Content/js/pikeadmin.js"></script>
+
+    <!-- BEGIN Java Script for this page -->
+    <!-- END Java Script for this page -->
+</body>
+</html>

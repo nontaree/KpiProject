@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a9b52326a4940c4abf27f2a5a5ac3e6" Name="Diagram1">
+        <EntityTypeShape EntityType="KPIModel.kpi_Ability" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_AbilityGrade" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_AbilityRate" Width="1.5" PointX="6" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_AbilitySet" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_AbilityType" Width="1.5" PointX="1.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_Perfomance" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_PerfomanceKey" Width="1.5" PointX="5.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_PerfomanceLevel" Width="1.5" PointX="7.5" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_PerfomanceRate" Width="1.5" PointX="12" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_PerfomanceType" Width="1.5" PointX="3" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_SetGoal" Width="1.5" PointX="9.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_StatusAbility" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_Total" Width="1.5" PointX="3" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.kpi_Year" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.sysdiagram" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.umsgroup" Width="1.5" PointX="1.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KPIModel.umsuser" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <AssociationConnector Association="KPIModel.FK_kpi_Ability_kpi_AbilityType" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilitySet_kpi_Ability1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilityGrade_kpi_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilityGrade_umsuser" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilityRate_kpi_AbilitySet" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilityRate_kpi_Year1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilityRate_umsuser1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilitySet_kpi_StatusAbility1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_AbilitySet_kpi_Year1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_Perfomance_kpi_Year1" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_PerfomanceKey_kpi_Perfomance" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_SetGoal_kpi_Perfomance" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_PerfomanceLevel_kpi_PerfomanceKey" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_SetGoal_kpi_PerfomanceKey" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_SetGoal_kpi_PerfomanceLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_PerfomanceRate_kpi_SetGoal" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_PerfomanceRate_umsuser" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_PerfomanceType_kpi_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_SetGoal_kpi_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_SetGoal_umsuser" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_kpi_Total_kpi_Year" ManuallyRouted="false" />
+        <AssociationConnector Association="KPIModel.FK_umsuser_umsgroup" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

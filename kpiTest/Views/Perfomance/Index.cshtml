@@ -1,0 +1,403 @@
+﻿@model IEnumerable<kpiTest.Models.kpi_Perfomance>
+@*@model  kpiTest.ViewModel.KpiViewModel*@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KPM_Event)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KPM_FPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KPM_SPercent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kpi_Year.KPY_Name)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPM_Event)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPM_FPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KPM_SPercent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kpi_Year.KPY_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.KPM_ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.KPM_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.KPM_ID })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+<div class="animated fadeIn">
+
+    <div class="card">
+        <table class="table table-responsive-sm table-bordered" style="margin-bottom: 0px;">
+            <tbody>
+
+                <tr>
+                    <td width="20%" style="background-color:#444444; color:#ffffff;border-bottom-width: 0px;">
+                        <h5><b>ปีการประเมิน</b></h5>
+                    </td>
+
+                    <td>
+                        <h4> </h4>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width="20%" style="background-color:#444444; color:#ffffff;border-top-width: 0px;">
+                        <h5><b>รอบการประเมิน</b></h5>
+                    </td>
+                    <td>
+                        <h4> สถานะ  : <i style="color:forestgreen;">กำหนดค่าเป้าหมาย</i></h4>
+                        (1 เม.ย. 2562 ถึง 30 เม.ษ. 2562)
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#kpi1" role="tab" aria-controls="kpi1"> <b>ผลรวม KPI พื้นฐาน</b> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#kpi2" role="tab" aria-controls="kpi2"> <b>ผลรวม KPI พิเศษ</b> </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="kpi1" role="tabpanel" style="padding: 0 0 0 0;">
+                <div class="card" style="margin-bottom: 0px;">
+
+                    <div class="card-body">
+                        <div class="text-center" style="margin-bottom: 20px; font-size: 20px;">
+                            ผลรวม KPI พื้นฐาน คิดเป็น 85% จากทั้งหมด 70% โดยคำนวณจากผลรวม 100% ของเกณฑ์ข้อ 1-4
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    @Html.DropDownList("SelectListKpi", new SelectList(ViewBag.EventKpi, "Value", "Text"), new { onchange = "ChangeEvent()" })
+                                    @*@Html.DropDownListFor(model => model.KPM_ID, (SelectList)ViewData["eventkpi"], "---Please Select---", new { @class = "form-control", required = "Required" })*@
+                                    @*@Html.ValidationMessageFor(model => model.KPM_ID, "", new { @class = "text-danger" })*@
+
+                                    @*<select class="form-control" id="#" style="margin-bottom: 20px;">
+                                            <option>1. ด้านการเรียนการสอน</option>
+                                            <option>2. ด้านการสร้างผลงานทางวิชาการ</option>
+                                            <option>3. ด้านบริการวิชาการ</option>
+                                            <option>4. ด้านการมีส่วนร่วมต่อพันธกิจในการขับเคลื่อนยุทธศาสตร์</option>
+                                        </select>*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <div id="categorykpi"><b>1. ด้านการเรียนการสอน (ร้อยละ 35)</b></div>
+                            </div>
+
+                            <div class="card-body">
+
+                                <table class="table table-responsive-sm table-hover table-outline mb-0 table-bordered">
+                                    <thead class="thead-light">
+
+                                        <tr>
+                                            <th class="text-center" style="width:5%;"> ลำดับ </th>
+                                            <th class="text-center" width="55%"> ตัวชี้วัด </th>
+                                            @*<th class="text-center" width="12%"> ข้อมูลพื้นฐาน </th>*@
+                                            <th class="text-center" width="12%"> น้ำหนัก </th>
+                                            <th class="text-center" width="12%"> ค่าคะแนน </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*@foreach (var item in Model)
+                                        {*@
+                                            <tr>
+                                                <td class="text-center">1.1</td>
+
+                                                <td>
+                                                    <b>ภาระงานสอนในรอบการประเมิน</b>อันนี้ตัว kpi_perfomancekey ตัวระดับ kpi_performancelevel
+
+                                                    <br>
+                                                    <div class="form-group row">
+                                                        <div class="col-md-9 col-form-label">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                                <label class="form-check-label" for="radio1">
+                                                                    ระดับที่ 1 เท่ากับภาระงานสองขั้นต่ำ
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                                <label class="form-check-label" for="radio2">
+                                                                    ระดับที่ 2 เพิ่มขึ้นจากระดับที่ 1 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                                <label class="form-check-label" for="radio3">
+                                                                    ระดับที่ 3 เพิ่มขึ้นจากระดับที่ 2 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                                <label class="form-check-label" for="radio3">
+                                                                    ระดับที่ 4 เพิ่มขึ้นจากระดับที่ 3 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                                <label class="form-check-label" for="radio3">
+                                                                    ระดับที่ 5 เพิ่มขึ้นจากระดับที่ 4
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <input type="text" class="form-control" id="name">
+                                                </td>
+
+                                                <td>
+                                                    <input type="text" class="form-control" id="name">
+                                                </td>
+                                            </tr>
+                                        @*}*@
+
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                            <b style="color:red;">หมายเหตุ</b>
+                                                        </a>
+                                                        <div id="exampleAccordion1" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. ภาระงานที่เพิ่มจากภาระงานสอนขั้นต่ำต้องเป็นภาระงานสอนที่ไม่รับค่าตอบแทน
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="kpi2" role="tabpanel" style="padding: 0 0 0 0;">
+                <div class="card" style="margin-bottom: 0px;">
+
+                    <div class="card-body">
+                        <div class="text-center" style="margin-bottom: 20px; font-size: 20px;">
+                            ผลรวม KPI พิเศษ คิดเป็น 15% จากทั้งหมด 70%
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <select class="form-control" id="#" style="margin-bottom: 20px;">
+                                        <option>1. ภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม</option>
+                                        <option>2. ภาระงานพิเศษเฉพาะบุคคล</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <b>1. ภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม (ร้อยละ 10)</b>
+                            </div>
+
+                            <div class="card-body">
+
+                                <table class="table table-responsive-sm table-hover table-outline mb-0 table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="text-center" style="width:5%;"> ลำดับ </th>
+                                            <th class="text-center" width="55%"> ตัวชี้วัด </th>
+                                            @*<th class="text-center" width="12%"> ข้อมูลพื้นฐาน </th>*@
+                                            <th class="text-center" width="12%"> น้ำหนัก </th>
+                                            <th class="text-center" width="12%"> ค่าคะแนน </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.1</td>
+
+                                            <td>
+                                                <b>ข้อตกลงพิเศษรายบุคคลที่สอดคล้องกับพันธกิจของส่วนงาน เพื่อส่งเสริมการพัฒนาคณะร่วมกัน</b>
+                                                <br>
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 ภาระงานพิเศษไม่เกิน 80 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 ภาระงานพิเศษไม่เกิน 160 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 ภาระงานพิเศษไม่เกิน 240 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 ภาระงานพิเศษไม่เกิน 320 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 ภาระงานพิเศษไม่น้อยกว่า 320 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion5" aria-expanded="true" aria-controls="exampleAccordion5">
+                                                            <b style="color:red;">หมายเหตุ</b> การคำนวณภาระงานตาม KPI พิเศษ
+                                                        </a>
+                                                        <div id="exampleAccordion5" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. การคานวณ KPI พิเศษจะอิงตามภาระงานตามประกาศมาตรฐานภาระงาน
+                                                                ทางวิชาการของคณาจารย์ประจา คณะวิท/ยาการสารสนเทศ พ.ศ. 2559 <br>
+                                                                สรุปภาระงานตามประกาศมาตรฐานภาระงานทางวิชาการของคณาจารย์ประจำ คณะวิทยาการสารสนเทศ พ.ศ. 2559 <br>
+                                                            </p>
+                                                            @*<table class="table table-responsive-sm table-bordered">
+                                                                    <thead>
+                                                                        <tr></tr>
+                                                                        <tr>จำนวนหน่วย ชม.</tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            1. ภาระงานสอน*
+                                                                        </tr>
+                                                                        <tr>
+                                                                            2. ภาระงานวิจัย*
+                                                                        </tr>
+                                                                        <tr>
+                                                                            3. ภาระงานบริการวิชาการ
+                                                                        </tr>
+                                                                        <tr>
+                                                                            4. ยุทธศาสตร์/การมีส่วนร่วมกับองค์กร
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>*@
+
+                                                            <p class="mb-3">
+                                                                2. การคำนวณภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม ให้คำนวณดังนี้ <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 1 จะได้รับสัดส่วนภาระงานเท่ากับ 2% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 2 จะได้รับสัดส่วนภาระงานเท่ากับ 4% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 3 จะได้รับสัดส่วนภาระงานเท่ากับ 6% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 4 จะได้รับสัดส่วนภาระงานเท่ากับ 8% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 5 จะได้รับสัดส่วนภาระงานเท่ากับ 10% จาก 10% <br>
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                3. การคานวณภาระงานพิเศษเฉพาะบุคคล ให้คานวณดังนี้ <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 1 จะได้รับสัดส่วนภาระงานเท่ากับ 1% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 2 จะได้รับสัดส่วนภาระงานเท่ากับ 2% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 3 จะได้รับสัดส่วนภาระงานเท่ากับ 3% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 4 จะได้รับสัดส่วนภาระงานเท่ากับ 4% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 5 จะได้รับสัดส่วนภาระงานเท่ากับ 5% จาก 5%<br>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2" align='right'>
+                                                ผลรวม
+                                            </td>
+                                            <td>100</td>
+                                            <td>...</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <p>
+                                    <b style="color:red;">หมายเหตุ</b>
+                                    <br>
+                                    &emsp; 1. การกาหนด KPI และการประเมินผล KPI จะพิจารณากลั่นกรองโดยคณะกรรมการกลั่นกรองผลการปฏิบัติงานตามสาขาวิชา แล้วเสนอกลั่นกรองในที่ประชุมคณะกรรมการบริหารคณะฯ <br>
+                                    &emsp; 2. การแก้ไขหรือปรับแก้ KPI จะสามารถกระทาได้ในช่วงเวลาระหว่างเดือนเมษายน – มิถุนายนเท่านั้น <br>
+                                    &emsp; 3. บุคลากรจะถูกประเมินผลการปฏิบัติงานทุกด้าน ตั้งแต่ด้านที่ 1 – 4 ของหมวด KPI หลัก โดยสามารถเลือกกาหนดค่าน้าหนักเองได้เฉพาะด้านที่ 2 – 4 <br>
+                                    &emsp; 4. สาหรับเกณฑ์ในแต่ละด้านของ KPI หลัก บุคลากรสามารถเลือกดาเนินการเกณฑ์ย่อยใดก็ได้ แต่ผลรวมของค่าน้าหนักของเกณฑ์ย่อยจะต้องไม่เกินกว่าค่าน้าหนักที่กาหนดไว้ในด้านนั้น <br>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ChangeEvent() {
+        var listKpi = $('#SelectListKpi').val();
+        console.log("Test >>> " + listKpi)
+
+        $('#categorykpi b').text($('#SelectListKpi option:selected').val()+'. '+$('#SelectListKpi option:selected').text())
+        console.log($('#SelectListKpi option:selected').text())
+    }
+</script>

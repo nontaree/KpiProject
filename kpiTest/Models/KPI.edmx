@@ -1,0 +1,1382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kpi_Ability">
+          <Key>
+            <PropertyRef Name="KAB_ID" />
+          </Key>
+          <Property Name="KAB_ID" Type="int" Nullable="false" />
+          <Property Name="KAB_Desc" Type="varchar" MaxLength="300" />
+          <Property Name="KAB_Comment" Type="text" />
+          <Property Name="KAB_Group" Type="int" />
+          <Property Name="KAP_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityGrade">
+          <Key>
+            <PropertyRef Name="KAG_ID" />
+          </Key>
+          <Property Name="KAG_ID" Type="int" Nullable="false" />
+          <Property Name="KAG_TotalScore" Type="int" />
+          <Property Name="KAG_SumScore" Type="float" Nullable="false" />
+          <Property Name="KAG_Status" Type="int" />
+          <Property Name="KAG_Comment1" Type="varchar" MaxLength="300" />
+          <Property Name="KAG_Comment2" Type="varchar" MaxLength="300" />
+          <Property Name="ums_ID" Type="int" />
+          <Property Name="KPY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityRate">
+          <Key>
+            <PropertyRef Name="KAR_ID" />
+          </Key>
+          <Property Name="KAR_ID" Type="int" Nullable="false" />
+          <Property Name="KAR_AbilScore" Type="int" />
+          <Property Name="KAR_Score" Type="int" />
+          <Property Name="KAR_Status" Type="int" />
+          <Property Name="KAR_Date" Type="date" />
+          <Property Name="KAR_UploadFlie" Type="varchar" MaxLength="300" />
+          <Property Name="KAS__ID" Type="int" />
+          <Property Name="ums_ID" Type="int" />
+          <Property Name="KPY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_AbilitySet">
+          <Key>
+            <PropertyRef Name="KAS_ID" />
+          </Key>
+          <Property Name="KAS_ID" Type="int" Nullable="false" />
+          <Property Name="KAS_LenghtScore" Type="float" />
+          <Property Name="KPY_ID" Type="int" />
+          <Property Name="KAB_ID" Type="int" />
+          <Property Name="KSA_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityType">
+          <Key>
+            <PropertyRef Name="KAP_ID" />
+          </Key>
+          <Property Name="KAP_ID" Type="int" Nullable="false" />
+          <Property Name="KAP_Desc" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="kpi_Perfomance">
+          <Key>
+            <PropertyRef Name="KPM_ID" />
+          </Key>
+          <Property Name="KPM_ID" Type="int" Nullable="false" />
+          <Property Name="KPM_Event" Type="varchar" MaxLength="300" />
+          <Property Name="KPM_FPercent" Type="int" />
+          <Property Name="KPM_SPercent" Type="int" />
+          <Property Name="KPY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceKey">
+          <Key>
+            <PropertyRef Name="KPK_ID" />
+          </Key>
+          <Property Name="KPK_ID" Type="int" Nullable="false" />
+          <Property Name="KPK_Number" Type="int" />
+          <Property Name="KPK_Name" Type="varchar" MaxLength="300" />
+          <Property Name="KPK_Comment" Type="varchar" MaxLength="300" />
+          <Property Name="KPM_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceLevel">
+          <Key>
+            <PropertyRef Name="KPL_ID" />
+          </Key>
+          <Property Name="KPL_ID" Type="int" Nullable="false" />
+          <Property Name="KPL_Number" Type="int" />
+          <Property Name="KPL_Desc" Type="varchar" MaxLength="300" />
+          <Property Name="KPL_MaxWeight" Type="int" />
+          <Property Name="KPL_MinWeight" Type="int" />
+          <Property Name="KPK_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceRate">
+          <Key>
+            <PropertyRef Name="KPR_ID" />
+          </Key>
+          <Property Name="KPR_ID" Type="int" Nullable="false" />
+          <Property Name="KPR_ScoreTech" Type="int" />
+          <Property Name="KPR_ScoreDean" Type="int" />
+          <Property Name="KPR_File" Type="varchar" MaxLength="300" />
+          <Property Name="KPR_Comment" Type="text" />
+          <Property Name="KPR_PerScore" Type="int" />
+          <Property Name="KPR_StatusTech" Type="int" />
+          <Property Name="KPR_StatusDean" Type="int" />
+          <Property Name="KSG_ID" Type="int" />
+          <Property Name="ums_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceType">
+          <Key>
+            <PropertyRef Name="KPT_ID" />
+          </Key>
+          <Property Name="KPT_ID" Type="int" Nullable="false" />
+          <Property Name="KPT_Desc" Type="varchar" MaxLength="300" />
+          <Property Name="KPY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_SetGoal">
+          <Key>
+            <PropertyRef Name="KSG_ID" />
+          </Key>
+          <Property Name="KSG_ID" Type="int" Nullable="false" />
+          <Property Name="KSG_UpGoal" Type="int" />
+          <Property Name="KSG_Status" Type="int" />
+          <Property Name="KSG_PerWeight" Type="int" />
+          <Property Name="KSG_SetDate" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="KSG_IPAdress" Type="varchar" MaxLength="300" />
+          <Property Name="KPY_ID" Type="int" Nullable="false" />
+          <Property Name="KPM_ID" Type="int" />
+          <Property Name="KPK_ID" Type="int" />
+          <Property Name="KPL_ID" Type="int" />
+          <Property Name="ums_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_StatusAbility">
+          <Key>
+            <PropertyRef Name="KSA_ID" />
+          </Key>
+          <Property Name="KSA_ID" Type="int" Nullable="false" />
+          <Property Name="KSA_Desc" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="kpi_Total">
+          <Key>
+            <PropertyRef Name="KPTT_ID" />
+          </Key>
+          <Property Name="KPTT_ID" Type="int" Nullable="false" />
+          <Property Name="KPTT_PerTotal" Type="int" />
+          <Property Name="KPTT_Percent" Type="int" />
+          <Property Name="KPTT_AbliTotal" Type="varchar" MaxLength="300" />
+          <Property Name="KPY_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="kpi_Year">
+          <Key>
+            <PropertyRef Name="KPY_ID" />
+          </Key>
+          <Property Name="KPY_ID" Type="int" Nullable="false" />
+          <Property Name="KPY_Name" Type="varchar" MaxLength="300" />
+          <Property Name="KPY_StartDate" Type="date" />
+          <Property Name="KPY_EndDate" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="umsgroup">
+          <Key>
+            <PropertyRef Name="umg_ID" />
+          </Key>
+          <Property Name="umg_ID" Type="int" Nullable="false" />
+          <Property Name="umg_Name" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="umsuser">
+          <Key>
+            <PropertyRef Name="ums_ID" />
+          </Key>
+          <Property Name="ums_ID" Type="int" Nullable="false" />
+          <Property Name="ums_Name" Type="varchar" MaxLength="300" />
+          <Property Name="ums_Surname" Type="varchar" MaxLength="300" />
+          <Property Name="ums_Login" Type="varchar" MaxLength="300" />
+          <Property Name="ums_Password" Type="varchar" MaxLength="300" />
+          <Property Name="umg_ID" Type="int" />
+          <Property Name="ums_FName" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK_kpi_Ability_kpi_AbilityType">
+          <End Role="kpi_AbilityType" Type="Self.kpi_AbilityType" Multiplicity="0..1" />
+          <End Role="kpi_Ability" Type="Self.kpi_Ability" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_AbilityType">
+              <PropertyRef Name="KAP_ID" />
+            </Principal>
+            <Dependent Role="kpi_Ability">
+              <PropertyRef Name="KAP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityGrade_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilityGrade" Type="Self.kpi_AbilityGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityGrade">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityGrade_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_AbilityGrade" Type="Self.kpi_AbilityGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityGrade">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_kpi_AbilitySet">
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_AbilitySet">
+              <PropertyRef Name="KAS_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="KAS__ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_umsuser1">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_Ability1">
+          <End Role="kpi_Ability" Type="Self.kpi_Ability" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Ability">
+              <PropertyRef Name="KAB_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KAB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_StatusAbility1">
+          <End Role="kpi_StatusAbility" Type="Self.kpi_StatusAbility" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_StatusAbility">
+              <PropertyRef Name="KSA_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KSA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_Perfomance_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_Perfomance">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceKey_kpi_Perfomance">
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Perfomance">
+              <PropertyRef Name="KPM_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceLevel_kpi_PerfomanceKey">
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceLevel" Type="Self.kpi_PerfomanceLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPK_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceLevel">
+              <PropertyRef Name="KPK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceRate_kpi_SetGoal">
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceRate" Type="Self.kpi_PerfomanceRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_SetGoal">
+              <PropertyRef Name="KSG_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceRate">
+              <PropertyRef Name="KSG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceRate_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceRate" Type="Self.kpi_PerfomanceRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceRate">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceType_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceType" Type="Self.kpi_PerfomanceType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceType">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_Perfomance">
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Perfomance">
+              <PropertyRef Name="KPM_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_PerfomanceKey">
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPK_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_PerfomanceLevel">
+          <End Role="kpi_PerfomanceLevel" Type="Self.kpi_PerfomanceLevel" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceLevel">
+              <PropertyRef Name="KPL_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_Total_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_Total" Type="Self.kpi_Total" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_Total">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_umsuser_umsgroup">
+          <End Role="umsgroup" Type="Self.umsgroup" Multiplicity="0..1" />
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsgroup">
+              <PropertyRef Name="umg_ID" />
+            </Principal>
+            <Dependent Role="umsuser">
+              <PropertyRef Name="umg_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KPIModelStoreContainer">
+          <EntitySet Name="kpi_Ability" EntityType="Self.kpi_Ability" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_AbilityGrade" EntityType="Self.kpi_AbilityGrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_AbilityRate" EntityType="Self.kpi_AbilityRate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_AbilitySet" EntityType="Self.kpi_AbilitySet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_AbilityType" EntityType="Self.kpi_AbilityType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_Perfomance" EntityType="Self.kpi_Perfomance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_PerfomanceKey" EntityType="Self.kpi_PerfomanceKey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_PerfomanceLevel" EntityType="Self.kpi_PerfomanceLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_PerfomanceRate" EntityType="Self.kpi_PerfomanceRate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_PerfomanceType" EntityType="Self.kpi_PerfomanceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_SetGoal" EntityType="Self.kpi_SetGoal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_StatusAbility" EntityType="Self.kpi_StatusAbility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_Total" EntityType="Self.kpi_Total" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kpi_Year" EntityType="Self.kpi_Year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="umsgroup" EntityType="Self.umsgroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="umsuser" EntityType="Self.umsuser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_kpi_Ability_kpi_AbilityType" Association="Self.FK_kpi_Ability_kpi_AbilityType">
+            <End Role="kpi_AbilityType" EntitySet="kpi_AbilityType" />
+            <End Role="kpi_Ability" EntitySet="kpi_Ability" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityGrade_kpi_Year" Association="Self.FK_kpi_AbilityGrade_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilityGrade" EntitySet="kpi_AbilityGrade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityGrade_umsuser" Association="Self.FK_kpi_AbilityGrade_umsuser">
+            <End Role="umsuser" EntitySet="umsuser" />
+            <End Role="kpi_AbilityGrade" EntitySet="kpi_AbilityGrade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_kpi_AbilitySet" Association="Self.FK_kpi_AbilityRate_kpi_AbilitySet">
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_kpi_Year1" Association="Self.FK_kpi_AbilityRate_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_umsuser1" Association="Self.FK_kpi_AbilityRate_umsuser1">
+            <End Role="umsuser" EntitySet="umsuser" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_Ability1" Association="Self.FK_kpi_AbilitySet_kpi_Ability1">
+            <End Role="kpi_Ability" EntitySet="kpi_Ability" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_StatusAbility1" Association="Self.FK_kpi_AbilitySet_kpi_StatusAbility1">
+            <End Role="kpi_StatusAbility" EntitySet="kpi_StatusAbility" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_Year1" Association="Self.FK_kpi_AbilitySet_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_Perfomance_kpi_Year1" Association="Self.FK_kpi_Perfomance_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceKey_kpi_Perfomance" Association="Self.FK_kpi_PerfomanceKey_kpi_Perfomance">
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceLevel_kpi_PerfomanceKey" Association="Self.FK_kpi_PerfomanceLevel_kpi_PerfomanceKey">
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+            <End Role="kpi_PerfomanceLevel" EntitySet="kpi_PerfomanceLevel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceRate_kpi_SetGoal" Association="Self.FK_kpi_PerfomanceRate_kpi_SetGoal">
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+            <End Role="kpi_PerfomanceRate" EntitySet="kpi_PerfomanceRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceRate_umsuser" Association="Self.FK_kpi_PerfomanceRate_umsuser">
+            <End Role="umsuser" EntitySet="umsuser" />
+            <End Role="kpi_PerfomanceRate" EntitySet="kpi_PerfomanceRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceType_kpi_Year" Association="Self.FK_kpi_PerfomanceType_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_PerfomanceType" EntitySet="kpi_PerfomanceType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_Perfomance" Association="Self.FK_kpi_SetGoal_kpi_Perfomance">
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_PerfomanceKey" Association="Self.FK_kpi_SetGoal_kpi_PerfomanceKey">
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_PerfomanceLevel" Association="Self.FK_kpi_SetGoal_kpi_PerfomanceLevel">
+            <End Role="kpi_PerfomanceLevel" EntitySet="kpi_PerfomanceLevel" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_Year" Association="Self.FK_kpi_SetGoal_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_umsuser" Association="Self.FK_kpi_SetGoal_umsuser">
+            <End Role="umsuser" EntitySet="umsuser" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_Total_kpi_Year" Association="Self.FK_kpi_Total_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_Total" EntitySet="kpi_Total" />
+          </AssociationSet>
+          <AssociationSet Name="FK_umsuser_umsgroup" Association="Self.FK_umsuser_umsgroup">
+            <End Role="umsgroup" EntitySet="umsgroup" />
+            <End Role="umsuser" EntitySet="umsuser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="kpi_Ability">
+          <Key>
+            <PropertyRef Name="KAB_ID" />
+          </Key>
+          <Property Name="KAB_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAB_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KAB_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KAB_Group" Type="Int32" />
+          <Property Name="KAP_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_AbilityType" Relationship="Self.FK_kpi_Ability_kpi_AbilityType" FromRole="kpi_Ability" ToRole="kpi_AbilityType" />
+          <NavigationProperty Name="kpi_AbilitySet" Relationship="Self.FK_kpi_AbilitySet_kpi_Ability1" FromRole="kpi_Ability" ToRole="kpi_AbilitySet" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityGrade">
+          <Key>
+            <PropertyRef Name="KAG_ID" />
+          </Key>
+          <Property Name="KAG_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAG_TotalScore" Type="Int32" />
+          <Property Name="KAG_SumScore" Type="Double" Nullable="false" />
+          <Property Name="KAG_Status" Type="Int32" />
+          <Property Name="KAG_Comment1" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KAG_Comment2" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ums_ID" Type="Int32" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_AbilityGrade_kpi_Year" FromRole="kpi_AbilityGrade" ToRole="kpi_Year" />
+          <NavigationProperty Name="umsuser" Relationship="Self.FK_kpi_AbilityGrade_umsuser" FromRole="kpi_AbilityGrade" ToRole="umsuser" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityRate">
+          <Key>
+            <PropertyRef Name="KAR_ID" />
+          </Key>
+          <Property Name="KAR_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAR_AbilScore" Type="Int32" />
+          <Property Name="KAR_Score" Type="Int32" />
+          <Property Name="KAR_Status" Type="Int32" />
+          <Property Name="KAR_Date" Type="DateTime" Precision="0" />
+          <Property Name="KAR_UploadFlie" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KAS__ID" Type="Int32" />
+          <Property Name="ums_ID" Type="Int32" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_AbilitySet" Relationship="Self.FK_kpi_AbilityRate_kpi_AbilitySet" FromRole="kpi_AbilityRate" ToRole="kpi_AbilitySet" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_AbilityRate_kpi_Year1" FromRole="kpi_AbilityRate" ToRole="kpi_Year" />
+          <NavigationProperty Name="umsuser" Relationship="Self.FK_kpi_AbilityRate_umsuser1" FromRole="kpi_AbilityRate" ToRole="umsuser" />
+        </EntityType>
+        <EntityType Name="kpi_AbilitySet">
+          <Key>
+            <PropertyRef Name="KAS_ID" />
+          </Key>
+          <Property Name="KAS_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAS_LenghtScore" Type="Double" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <Property Name="KAB_ID" Type="Int32" />
+          <Property Name="KSA_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Ability" Relationship="Self.FK_kpi_AbilitySet_kpi_Ability1" FromRole="kpi_AbilitySet" ToRole="kpi_Ability" />
+          <NavigationProperty Name="kpi_AbilityRate" Relationship="Self.FK_kpi_AbilityRate_kpi_AbilitySet" FromRole="kpi_AbilitySet" ToRole="kpi_AbilityRate" />
+          <NavigationProperty Name="kpi_StatusAbility" Relationship="Self.FK_kpi_AbilitySet_kpi_StatusAbility1" FromRole="kpi_AbilitySet" ToRole="kpi_StatusAbility" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_AbilitySet_kpi_Year1" FromRole="kpi_AbilitySet" ToRole="kpi_Year" />
+        </EntityType>
+        <EntityType Name="kpi_AbilityType">
+          <Key>
+            <PropertyRef Name="KAP_ID" />
+          </Key>
+          <Property Name="KAP_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAP_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="kpi_Ability" Relationship="Self.FK_kpi_Ability_kpi_AbilityType" FromRole="kpi_AbilityType" ToRole="kpi_Ability" />
+        </EntityType>
+        <EntityType Name="kpi_Perfomance">
+          <Key>
+            <PropertyRef Name="KPM_ID" />
+          </Key>
+          <Property Name="KPM_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPM_Event" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPM_FPercent" Type="Int32" />
+          <Property Name="KPM_SPercent" Type="Int32" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_Perfomance_kpi_Year1" FromRole="kpi_Perfomance" ToRole="kpi_Year" />
+          <NavigationProperty Name="kpi_PerfomanceKey" Relationship="Self.FK_kpi_PerfomanceKey_kpi_Perfomance" FromRole="kpi_Perfomance" ToRole="kpi_PerfomanceKey" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_SetGoal_kpi_Perfomance" FromRole="kpi_Perfomance" ToRole="kpi_SetGoal" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceKey">
+          <Key>
+            <PropertyRef Name="KPK_ID" />
+          </Key>
+          <Property Name="KPK_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPK_Number" Type="Int32" />
+          <Property Name="KPK_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPK_Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPM_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Perfomance" Relationship="Self.FK_kpi_PerfomanceKey_kpi_Perfomance" FromRole="kpi_PerfomanceKey" ToRole="kpi_Perfomance" />
+          <NavigationProperty Name="kpi_PerfomanceLevel" Relationship="Self.FK_kpi_PerfomanceLevel_kpi_PerfomanceKey" FromRole="kpi_PerfomanceKey" ToRole="kpi_PerfomanceLevel" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_SetGoal_kpi_PerfomanceKey" FromRole="kpi_PerfomanceKey" ToRole="kpi_SetGoal" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceLevel">
+          <Key>
+            <PropertyRef Name="KPL_ID" />
+          </Key>
+          <Property Name="KPL_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPL_Number" Type="Int32" />
+          <Property Name="KPL_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPL_MaxWeight" Type="Int32" />
+          <Property Name="KPL_MinWeight" Type="Int32" />
+          <Property Name="KPK_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_PerfomanceKey" Relationship="Self.FK_kpi_PerfomanceLevel_kpi_PerfomanceKey" FromRole="kpi_PerfomanceLevel" ToRole="kpi_PerfomanceKey" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_SetGoal_kpi_PerfomanceLevel" FromRole="kpi_PerfomanceLevel" ToRole="kpi_SetGoal" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceRate">
+          <Key>
+            <PropertyRef Name="KPR_ID" />
+          </Key>
+          <Property Name="KPR_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPR_ScoreTech" Type="Int32" />
+          <Property Name="KPR_ScoreDean" Type="Int32" />
+          <Property Name="KPR_File" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPR_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KPR_PerScore" Type="Int32" />
+          <Property Name="KPR_StatusTech" Type="Int32" />
+          <Property Name="KPR_StatusDean" Type="Int32" />
+          <Property Name="KSG_ID" Type="Int32" />
+          <Property Name="ums_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_PerfomanceRate_kpi_SetGoal" FromRole="kpi_PerfomanceRate" ToRole="kpi_SetGoal" />
+          <NavigationProperty Name="umsuser" Relationship="Self.FK_kpi_PerfomanceRate_umsuser" FromRole="kpi_PerfomanceRate" ToRole="umsuser" />
+        </EntityType>
+        <EntityType Name="kpi_PerfomanceType">
+          <Key>
+            <PropertyRef Name="KPT_ID" />
+          </Key>
+          <Property Name="KPT_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPT_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_PerfomanceType_kpi_Year" FromRole="kpi_PerfomanceType" ToRole="kpi_Year" />
+        </EntityType>
+        <EntityType Name="kpi_SetGoal">
+          <Key>
+            <PropertyRef Name="KSG_ID" />
+          </Key>
+          <Property Name="KSG_ID" Type="Int32" Nullable="false" />
+          <Property Name="KSG_UpGoal" Type="Int32" />
+          <Property Name="KSG_Status" Type="Int32" />
+          <Property Name="KSG_PerWeight" Type="Int32" />
+          <Property Name="KSG_SetDate" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="KSG_IPAdress" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPY_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPM_ID" Type="Int32" />
+          <Property Name="KPK_ID" Type="Int32" />
+          <Property Name="KPL_ID" Type="Int32" />
+          <Property Name="ums_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Perfomance" Relationship="Self.FK_kpi_SetGoal_kpi_Perfomance" FromRole="kpi_SetGoal" ToRole="kpi_Perfomance" />
+          <NavigationProperty Name="kpi_PerfomanceKey" Relationship="Self.FK_kpi_SetGoal_kpi_PerfomanceKey" FromRole="kpi_SetGoal" ToRole="kpi_PerfomanceKey" />
+          <NavigationProperty Name="kpi_PerfomanceLevel" Relationship="Self.FK_kpi_SetGoal_kpi_PerfomanceLevel" FromRole="kpi_SetGoal" ToRole="kpi_PerfomanceLevel" />
+          <NavigationProperty Name="kpi_PerfomanceRate" Relationship="Self.FK_kpi_PerfomanceRate_kpi_SetGoal" FromRole="kpi_SetGoal" ToRole="kpi_PerfomanceRate" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_SetGoal_kpi_Year" FromRole="kpi_SetGoal" ToRole="kpi_Year" />
+          <NavigationProperty Name="umsuser" Relationship="Self.FK_kpi_SetGoal_umsuser" FromRole="kpi_SetGoal" ToRole="umsuser" />
+        </EntityType>
+        <EntityType Name="kpi_StatusAbility">
+          <Key>
+            <PropertyRef Name="KSA_ID" />
+          </Key>
+          <Property Name="KSA_ID" Type="Int32" Nullable="false" />
+          <Property Name="KSA_Desc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="kpi_AbilitySet" Relationship="Self.FK_kpi_AbilitySet_kpi_StatusAbility1" FromRole="kpi_StatusAbility" ToRole="kpi_AbilitySet" />
+        </EntityType>
+        <EntityType Name="kpi_Total">
+          <Key>
+            <PropertyRef Name="KPTT_ID" />
+          </Key>
+          <Property Name="KPTT_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPTT_PerTotal" Type="Int32" />
+          <Property Name="KPTT_Percent" Type="Int32" />
+          <Property Name="KPTT_AbliTotal" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPY_ID" Type="Int32" />
+          <NavigationProperty Name="kpi_Year" Relationship="Self.FK_kpi_Total_kpi_Year" FromRole="kpi_Total" ToRole="kpi_Year" />
+        </EntityType>
+        <EntityType Name="kpi_Year">
+          <Key>
+            <PropertyRef Name="KPY_ID" />
+          </Key>
+          <Property Name="KPY_ID" Type="Int32" Nullable="false" />
+          <Property Name="KPY_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="KPY_StartDate" Type="DateTime" Precision="0" />
+          <Property Name="KPY_EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="kpi_AbilityGrade" Relationship="Self.FK_kpi_AbilityGrade_kpi_Year" FromRole="kpi_Year" ToRole="kpi_AbilityGrade" />
+          <NavigationProperty Name="kpi_AbilityRate" Relationship="Self.FK_kpi_AbilityRate_kpi_Year1" FromRole="kpi_Year" ToRole="kpi_AbilityRate" />
+          <NavigationProperty Name="kpi_AbilitySet" Relationship="Self.FK_kpi_AbilitySet_kpi_Year1" FromRole="kpi_Year" ToRole="kpi_AbilitySet" />
+          <NavigationProperty Name="kpi_Perfomance" Relationship="Self.FK_kpi_Perfomance_kpi_Year1" FromRole="kpi_Year" ToRole="kpi_Perfomance" />
+          <NavigationProperty Name="kpi_PerfomanceType" Relationship="Self.FK_kpi_PerfomanceType_kpi_Year" FromRole="kpi_Year" ToRole="kpi_PerfomanceType" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_SetGoal_kpi_Year" FromRole="kpi_Year" ToRole="kpi_SetGoal" />
+          <NavigationProperty Name="kpi_Total" Relationship="Self.FK_kpi_Total_kpi_Year" FromRole="kpi_Year" ToRole="kpi_Total" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="umsgroup">
+          <Key>
+            <PropertyRef Name="umg_ID" />
+          </Key>
+          <Property Name="umg_ID" Type="Int32" Nullable="false" />
+          <Property Name="umg_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="umsusers" Relationship="Self.FK_umsuser_umsgroup" FromRole="umsgroup" ToRole="umsuser" />
+        </EntityType>
+        <EntityType Name="umsuser">
+          <Key>
+            <PropertyRef Name="ums_ID" />
+          </Key>
+          <Property Name="ums_ID" Type="Int32" Nullable="false" />
+          <Property Name="ums_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ums_Surname" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ums_Login" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="ums_Password" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="umg_ID" Type="Int32" />
+          <Property Name="ums_FName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="kpi_AbilityGrade" Relationship="Self.FK_kpi_AbilityGrade_umsuser" FromRole="umsuser" ToRole="kpi_AbilityGrade" />
+          <NavigationProperty Name="kpi_AbilityRate" Relationship="Self.FK_kpi_AbilityRate_umsuser1" FromRole="umsuser" ToRole="kpi_AbilityRate" />
+          <NavigationProperty Name="kpi_PerfomanceRate" Relationship="Self.FK_kpi_PerfomanceRate_umsuser" FromRole="umsuser" ToRole="kpi_PerfomanceRate" />
+          <NavigationProperty Name="kpi_SetGoal" Relationship="Self.FK_kpi_SetGoal_umsuser" FromRole="umsuser" ToRole="kpi_SetGoal" />
+          <NavigationProperty Name="umsgroup" Relationship="Self.FK_umsuser_umsgroup" FromRole="umsuser" ToRole="umsgroup" />
+        </EntityType>
+        <Association Name="FK_kpi_Ability_kpi_AbilityType">
+          <End Role="kpi_AbilityType" Type="Self.kpi_AbilityType" Multiplicity="0..1" />
+          <End Role="kpi_Ability" Type="Self.kpi_Ability" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_AbilityType">
+              <PropertyRef Name="KAP_ID" />
+            </Principal>
+            <Dependent Role="kpi_Ability">
+              <PropertyRef Name="KAP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_Ability1">
+          <End Role="kpi_Ability" Type="Self.kpi_Ability" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Ability">
+              <PropertyRef Name="KAB_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KAB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityGrade_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilityGrade" Type="Self.kpi_AbilityGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityGrade">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityGrade_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_AbilityGrade" Type="Self.kpi_AbilityGrade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityGrade">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_kpi_AbilitySet">
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_AbilitySet">
+              <PropertyRef Name="KAS_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="KAS__ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilityRate_umsuser1">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_AbilityRate" Type="Self.kpi_AbilityRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilityRate">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_StatusAbility1">
+          <End Role="kpi_StatusAbility" Type="Self.kpi_StatusAbility" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_StatusAbility">
+              <PropertyRef Name="KSA_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KSA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_AbilitySet_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_AbilitySet" Type="Self.kpi_AbilitySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_AbilitySet">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_Perfomance_kpi_Year1">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_Perfomance">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceKey_kpi_Perfomance">
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Perfomance">
+              <PropertyRef Name="KPM_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_Perfomance">
+          <End Role="kpi_Perfomance" Type="Self.kpi_Perfomance" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Perfomance">
+              <PropertyRef Name="KPM_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceLevel_kpi_PerfomanceKey">
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceLevel" Type="Self.kpi_PerfomanceLevel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPK_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceLevel">
+              <PropertyRef Name="KPK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_PerfomanceKey">
+          <End Role="kpi_PerfomanceKey" Type="Self.kpi_PerfomanceKey" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceKey">
+              <PropertyRef Name="KPK_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPK_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_PerfomanceLevel">
+          <End Role="kpi_PerfomanceLevel" Type="Self.kpi_PerfomanceLevel" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_PerfomanceLevel">
+              <PropertyRef Name="KPL_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPL_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceRate_kpi_SetGoal">
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceRate" Type="Self.kpi_PerfomanceRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_SetGoal">
+              <PropertyRef Name="KSG_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceRate">
+              <PropertyRef Name="KSG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceRate_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceRate" Type="Self.kpi_PerfomanceRate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceRate">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_PerfomanceType_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_PerfomanceType" Type="Self.kpi_PerfomanceType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_PerfomanceType">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_SetGoal_umsuser">
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="0..1" />
+          <End Role="kpi_SetGoal" Type="Self.kpi_SetGoal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsuser">
+              <PropertyRef Name="ums_ID" />
+            </Principal>
+            <Dependent Role="kpi_SetGoal">
+              <PropertyRef Name="ums_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kpi_Total_kpi_Year">
+          <End Role="kpi_Year" Type="Self.kpi_Year" Multiplicity="0..1" />
+          <End Role="kpi_Total" Type="Self.kpi_Total" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kpi_Year">
+              <PropertyRef Name="KPY_ID" />
+            </Principal>
+            <Dependent Role="kpi_Total">
+              <PropertyRef Name="KPY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_umsuser_umsgroup">
+          <End Role="umsgroup" Type="Self.umsgroup" Multiplicity="0..1" />
+          <End Role="umsuser" Type="Self.umsuser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="umsgroup">
+              <PropertyRef Name="umg_ID" />
+            </Principal>
+            <Dependent Role="umsuser">
+              <PropertyRef Name="umg_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="kpi_Ability" EntityType="Self.kpi_Ability" />
+          <EntitySet Name="kpi_AbilityGrade" EntityType="Self.kpi_AbilityGrade" />
+          <EntitySet Name="kpi_AbilityRate" EntityType="Self.kpi_AbilityRate" />
+          <EntitySet Name="kpi_AbilitySet" EntityType="Self.kpi_AbilitySet" />
+          <EntitySet Name="kpi_AbilityType" EntityType="Self.kpi_AbilityType" />
+          <EntitySet Name="kpi_Perfomance" EntityType="Self.kpi_Perfomance" />
+          <EntitySet Name="kpi_PerfomanceKey" EntityType="Self.kpi_PerfomanceKey" />
+          <EntitySet Name="kpi_PerfomanceLevel" EntityType="Self.kpi_PerfomanceLevel" />
+          <EntitySet Name="kpi_PerfomanceRate" EntityType="Self.kpi_PerfomanceRate" />
+          <EntitySet Name="kpi_PerfomanceType" EntityType="Self.kpi_PerfomanceType" />
+          <EntitySet Name="kpi_SetGoal" EntityType="Self.kpi_SetGoal" />
+          <EntitySet Name="kpi_StatusAbility" EntityType="Self.kpi_StatusAbility" />
+          <EntitySet Name="kpi_Total" EntityType="Self.kpi_Total" />
+          <EntitySet Name="kpi_Year" EntityType="Self.kpi_Year" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="umsgroups" EntityType="Self.umsgroup" />
+          <EntitySet Name="umsusers" EntityType="Self.umsuser" />
+          <AssociationSet Name="FK_kpi_Ability_kpi_AbilityType" Association="Self.FK_kpi_Ability_kpi_AbilityType">
+            <End Role="kpi_AbilityType" EntitySet="kpi_AbilityType" />
+            <End Role="kpi_Ability" EntitySet="kpi_Ability" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_Ability1" Association="Self.FK_kpi_AbilitySet_kpi_Ability1">
+            <End Role="kpi_Ability" EntitySet="kpi_Ability" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityGrade_kpi_Year" Association="Self.FK_kpi_AbilityGrade_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilityGrade" EntitySet="kpi_AbilityGrade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityGrade_umsuser" Association="Self.FK_kpi_AbilityGrade_umsuser">
+            <End Role="umsuser" EntitySet="umsusers" />
+            <End Role="kpi_AbilityGrade" EntitySet="kpi_AbilityGrade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_kpi_AbilitySet" Association="Self.FK_kpi_AbilityRate_kpi_AbilitySet">
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_kpi_Year1" Association="Self.FK_kpi_AbilityRate_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilityRate_umsuser1" Association="Self.FK_kpi_AbilityRate_umsuser1">
+            <End Role="umsuser" EntitySet="umsusers" />
+            <End Role="kpi_AbilityRate" EntitySet="kpi_AbilityRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_StatusAbility1" Association="Self.FK_kpi_AbilitySet_kpi_StatusAbility1">
+            <End Role="kpi_StatusAbility" EntitySet="kpi_StatusAbility" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_AbilitySet_kpi_Year1" Association="Self.FK_kpi_AbilitySet_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_AbilitySet" EntitySet="kpi_AbilitySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_Perfomance_kpi_Year1" Association="Self.FK_kpi_Perfomance_kpi_Year1">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceKey_kpi_Perfomance" Association="Self.FK_kpi_PerfomanceKey_kpi_Perfomance">
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_Perfomance" Association="Self.FK_kpi_SetGoal_kpi_Perfomance">
+            <End Role="kpi_Perfomance" EntitySet="kpi_Perfomance" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceLevel_kpi_PerfomanceKey" Association="Self.FK_kpi_PerfomanceLevel_kpi_PerfomanceKey">
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+            <End Role="kpi_PerfomanceLevel" EntitySet="kpi_PerfomanceLevel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_PerfomanceKey" Association="Self.FK_kpi_SetGoal_kpi_PerfomanceKey">
+            <End Role="kpi_PerfomanceKey" EntitySet="kpi_PerfomanceKey" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_PerfomanceLevel" Association="Self.FK_kpi_SetGoal_kpi_PerfomanceLevel">
+            <End Role="kpi_PerfomanceLevel" EntitySet="kpi_PerfomanceLevel" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceRate_kpi_SetGoal" Association="Self.FK_kpi_PerfomanceRate_kpi_SetGoal">
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+            <End Role="kpi_PerfomanceRate" EntitySet="kpi_PerfomanceRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceRate_umsuser" Association="Self.FK_kpi_PerfomanceRate_umsuser">
+            <End Role="umsuser" EntitySet="umsusers" />
+            <End Role="kpi_PerfomanceRate" EntitySet="kpi_PerfomanceRate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_PerfomanceType_kpi_Year" Association="Self.FK_kpi_PerfomanceType_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_PerfomanceType" EntitySet="kpi_PerfomanceType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_kpi_Year" Association="Self.FK_kpi_SetGoal_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_SetGoal_umsuser" Association="Self.FK_kpi_SetGoal_umsuser">
+            <End Role="umsuser" EntitySet="umsusers" />
+            <End Role="kpi_SetGoal" EntitySet="kpi_SetGoal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kpi_Total_kpi_Year" Association="Self.FK_kpi_Total_kpi_Year">
+            <End Role="kpi_Year" EntitySet="kpi_Year" />
+            <End Role="kpi_Total" EntitySet="kpi_Total" />
+          </AssociationSet>
+          <AssociationSet Name="FK_umsuser_umsgroup" Association="Self.FK_umsuser_umsgroup">
+            <End Role="umsgroup" EntitySet="umsgroups" />
+            <End Role="umsuser" EntitySet="umsusers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KPIModelStoreContainer" CdmEntityContainer="KPIEntities">
+          <EntitySetMapping Name="kpi_Ability">
+            <EntityTypeMapping TypeName="KPIModel.kpi_Ability">
+              <MappingFragment StoreEntitySet="kpi_Ability">
+                <ScalarProperty Name="KAB_ID" ColumnName="KAB_ID" />
+                <ScalarProperty Name="KAB_Desc" ColumnName="KAB_Desc" />
+                <ScalarProperty Name="KAB_Comment" ColumnName="KAB_Comment" />
+                <ScalarProperty Name="KAB_Group" ColumnName="KAB_Group" />
+                <ScalarProperty Name="KAP_ID" ColumnName="KAP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_AbilityGrade">
+            <EntityTypeMapping TypeName="KPIModel.kpi_AbilityGrade">
+              <MappingFragment StoreEntitySet="kpi_AbilityGrade">
+                <ScalarProperty Name="KAG_ID" ColumnName="KAG_ID" />
+                <ScalarProperty Name="KAG_TotalScore" ColumnName="KAG_TotalScore" />
+                <ScalarProperty Name="KAG_SumScore" ColumnName="KAG_SumScore" />
+                <ScalarProperty Name="KAG_Status" ColumnName="KAG_Status" />
+                <ScalarProperty Name="KAG_Comment1" ColumnName="KAG_Comment1" />
+                <ScalarProperty Name="KAG_Comment2" ColumnName="KAG_Comment2" />
+                <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_AbilityRate">
+            <EntityTypeMapping TypeName="KPIModel.kpi_AbilityRate">
+              <MappingFragment StoreEntitySet="kpi_AbilityRate">
+                <ScalarProperty Name="KAR_ID" ColumnName="KAR_ID" />
+                <ScalarProperty Name="KAR_AbilScore" ColumnName="KAR_AbilScore" />
+                <ScalarProperty Name="KAR_Score" ColumnName="KAR_Score" />
+                <ScalarProperty Name="KAR_Status" ColumnName="KAR_Status" />
+                <ScalarProperty Name="KAR_Date" ColumnName="KAR_Date" />
+                <ScalarProperty Name="KAR_UploadFlie" ColumnName="KAR_UploadFlie" />
+                <ScalarProperty Name="KAS__ID" ColumnName="KAS__ID" />
+                <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_AbilitySet">
+            <EntityTypeMapping TypeName="KPIModel.kpi_AbilitySet">
+              <MappingFragment StoreEntitySet="kpi_AbilitySet">
+                <ScalarProperty Name="KAS_ID" ColumnName="KAS_ID" />
+                <ScalarProperty Name="KAS_LenghtScore" ColumnName="KAS_LenghtScore" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+                <ScalarProperty Name="KAB_ID" ColumnName="KAB_ID" />
+                <ScalarProperty Name="KSA_ID" ColumnName="KSA_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_AbilityType">
+            <EntityTypeMapping TypeName="KPIModel.kpi_AbilityType">
+              <MappingFragment StoreEntitySet="kpi_AbilityType">
+                <ScalarProperty Name="KAP_ID" ColumnName="KAP_ID" />
+                <ScalarProperty Name="KAP_Desc" ColumnName="KAP_Desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_Perfomance">
+            <EntityTypeMapping TypeName="KPIModel.kpi_Perfomance">
+              <MappingFragment StoreEntitySet="kpi_Perfomance">
+                <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+                <ScalarProperty Name="KPM_Event" ColumnName="KPM_Event" />
+                <ScalarProperty Name="KPM_FPercent" ColumnName="KPM_FPercent" />
+                <ScalarProperty Name="KPM_SPercent" ColumnName="KPM_SPercent" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_PerfomanceKey">
+            <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceKey">
+              <MappingFragment StoreEntitySet="kpi_PerfomanceKey">
+                <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+                <ScalarProperty Name="KPK_Number" ColumnName="KPK_Number" />
+                <ScalarProperty Name="KPK_Name" ColumnName="KPK_Name" />
+                <ScalarProperty Name="KPK_Comment" ColumnName="KPK_Comment" />
+                <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_PerfomanceLevel">
+            <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceLevel">
+              <MappingFragment StoreEntitySet="kpi_PerfomanceLevel">
+                <ScalarProperty Name="KPL_ID" ColumnName="KPL_ID" />
+                <ScalarProperty Name="KPL_Number" ColumnName="KPL_Number" />
+                <ScalarProperty Name="KPL_Desc" ColumnName="KPL_Desc" />
+                <ScalarProperty Name="KPL_MaxWeight" ColumnName="KPL_MaxWeight" />
+                <ScalarProperty Name="KPL_MinWeight" ColumnName="KPL_MinWeight" />
+                <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_PerfomanceRate">
+            <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceRate">
+              <MappingFragment StoreEntitySet="kpi_PerfomanceRate">
+                <ScalarProperty Name="KPR_ID" ColumnName="KPR_ID" />
+                <ScalarProperty Name="KPR_ScoreTech" ColumnName="KPR_ScoreTech" />
+                <ScalarProperty Name="KPR_ScoreDean" ColumnName="KPR_ScoreDean" />
+                <ScalarProperty Name="KPR_File" ColumnName="KPR_File" />
+                <ScalarProperty Name="KPR_Comment" ColumnName="KPR_Comment" />
+                <ScalarProperty Name="KPR_PerScore" ColumnName="KPR_PerScore" />
+                <ScalarProperty Name="KPR_StatusTech" ColumnName="KPR_StatusTech" />
+                <ScalarProperty Name="KPR_StatusDean" ColumnName="KPR_StatusDean" />
+                <ScalarProperty Name="KSG_ID" ColumnName="KSG_ID" />
+                <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_PerfomanceType">
+            <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceType">
+              <MappingFragment StoreEntitySet="kpi_PerfomanceType">
+                <ScalarProperty Name="KPT_ID" ColumnName="KPT_ID" />
+                <ScalarProperty Name="KPT_Desc" ColumnName="KPT_Desc" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_SetGoal">
+            <EntityTypeMapping TypeName="KPIModel.kpi_SetGoal">
+              <MappingFragment StoreEntitySet="kpi_SetGoal">
+                <ScalarProperty Name="KSG_ID" ColumnName="KSG_ID" />
+                <ScalarProperty Name="KSG_UpGoal" ColumnName="KSG_UpGoal" />
+                <ScalarProperty Name="KSG_Status" ColumnName="KSG_Status" />
+                <ScalarProperty Name="KSG_PerWeight" ColumnName="KSG_PerWeight" />
+                <ScalarProperty Name="KSG_SetDate" ColumnName="KSG_SetDate" />
+                <ScalarProperty Name="KSG_IPAdress" ColumnName="KSG_IPAdress" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+                <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+                <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+                <ScalarProperty Name="KPL_ID" ColumnName="KPL_ID" />
+                <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_StatusAbility">
+            <EntityTypeMapping TypeName="KPIModel.kpi_StatusAbility">
+              <MappingFragment StoreEntitySet="kpi_StatusAbility">
+                <ScalarProperty Name="KSA_ID" ColumnName="KSA_ID" />
+                <ScalarProperty Name="KSA_Desc" ColumnName="KSA_Desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_Total">
+            <EntityTypeMapping TypeName="KPIModel.kpi_Total">
+              <MappingFragment StoreEntitySet="kpi_Total">
+                <ScalarProperty Name="KPTT_ID" ColumnName="KPTT_ID" />
+                <ScalarProperty Name="KPTT_PerTotal" ColumnName="KPTT_PerTotal" />
+                <ScalarProperty Name="KPTT_Percent" ColumnName="KPTT_Percent" />
+                <ScalarProperty Name="KPTT_AbliTotal" ColumnName="KPTT_AbliTotal" />
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kpi_Year">
+            <EntityTypeMapping TypeName="KPIModel.kpi_Year">
+              <MappingFragment StoreEntitySet="kpi_Year">
+                <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+                <ScalarProperty Name="KPY_Name" ColumnName="KPY_Name" />
+                <ScalarProperty Name="KPY_StartDate" ColumnName="KPY_StartDate" />
+                <ScalarProperty Name="KPY_EndDate" ColumnName="KPY_EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KPIModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="umsgroups">
+            <EntityTypeMapping TypeName="KPIModel.umsgroup">
+              <MappingFragment StoreEntitySet="umsgroup">
+                <ScalarProperty Name="umg_ID" ColumnName="umg_ID" />
+                <ScalarProperty Name="umg_Name" ColumnName="umg_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="umsusers">
+            <EntityTypeMapping TypeName="KPIModel.umsuser">
+              <MappingFragment StoreEntitySet="umsuser">
+                <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+                <ScalarProperty Name="ums_Name" ColumnName="ums_Name" />
+                <ScalarProperty Name="ums_Surname" ColumnName="ums_Surname" />
+                <ScalarProperty Name="ums_Login" ColumnName="ums_Login" />
+                <ScalarProperty Name="ums_Password" ColumnName="ums_Password" />
+                <ScalarProperty Name="umg_ID" ColumnName="umg_ID" />
+                <ScalarProperty Name="ums_FName" ColumnName="ums_FName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

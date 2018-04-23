@@ -1,0 +1,582 @@
+﻿
+@{
+    ViewData["Name"] = "ประเมินประสิทธิภาพ";
+}
+
+<div class="animated fadeIn">
+
+    <div class="card">
+        <table class="table table-responsive-sm table-bordered" style="margin-bottom: 0px;">
+            <tbody>
+                <tr>
+                    <td width="20%" style="background-color:#444444; color:#ffffff;border-bottom-width: 0px;">
+                        <h5><b>ปีการประเมิน</b></h5>
+                    </td>
+                    <td>
+                        <h4>2562</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%" style="background-color:#444444; color:#ffffff;border-top-width: 0px;">
+                        <h5><b>รอบการประเมิน</b></h5>
+                    </td>
+                    <td>
+                        <h4> สถานะ  : <i style="color:forestgreen;">กำหนดค่าเป้าหมาย</i></h4>
+                        (1 เม.ย. 2562 ถึง 30 เม.ษ. 2562)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#kpi1" role="tab" aria-controls="kpi1"> <b>ผลรวม KPI พื้นฐาน</b> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#kpi2" role="tab" aria-controls="kpi2"> <b>ผลรวม KPI พิเศษ</b> </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="kpi1" role="tabpanel" style="padding: 0 0 0 0;">
+                <div class="card" style="margin-bottom: 0px;">
+
+                    <div class="card-body">
+                        <div class="text-center" style="margin-bottom: 20px; font-size: 20px;">
+                            ผลรวม KPI พื้นฐาน คิดเป็น 85% จากทั้งหมด 70% โดยคำนวณจากผลรวม 100% ของเกณฑ์ข้อ 1-4
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <select class="form-control" id="#" style="margin-bottom: 20px;">
+                                        <option>1. ด้านการเรียนการสอน</option>
+                                        <option>2. ด้านการสร้างผลงานทางวิชาการ</option>
+                                        <option>3. ด้านบริการวิชาการ</option>
+                                        <option>4. ด้านการมีส่วนร่วมต่อพันธกิจในการขับเคลื่อนยุทธศาสตร์</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <b>1. ด้านการเรียนการสอน (ร้อยละ 35)</b>
+                            </div>
+
+                            <div class="card-body">
+
+                                <table class="table table-responsive-sm table-hover table-outline mb-0 table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="text-center" style="width:5%;"> ลำดับ </th>
+                                            <th class="text-center" width="55%"> ตัวชี้วัด </th>
+                                            @*<th class="text-center" width="12%"> ข้อมูลพื้นฐาน </th>*@
+                                            <th class="text-center" width="12%"> น้ำหนัก </th>
+                                            <th class="text-center" width="12%"> ค่าคะแนน </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.1</td>
+
+                                            <td>
+                                                <b>ภาระงานสอนในรอบการประเมิน</b>
+                                                <br>
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 เท่ากับภาระงานสองขั้นต่ำ
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 เพิ่มขึ้นจากระดับที่ 1 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 เพิ่มขึ้นจากระดับที่ 2 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 เพิ่มขึ้นจากระดับที่ 3 อีกไม่เกิน 1 หน่วยภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 เพิ่มขึ้นจากระดับที่ 4
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion1" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                            <b style="color:red;">หมายเหตุ</b>
+                                                        </a>
+                                                        <div id="exampleAccordion1" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. ภาระงานที่เพิ่มจากภาระงานสอนขั้นต่ำต้องเป็นภาระงานสอนที่ไม่รับค่าตอบแทน
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.2</td>
+
+                                            <td>
+                                                <b>ผลการประเมินของนิสิต</b>
+                                                <br>
+
+                                                &nbsp;&nbsp;&nbsp;&nbsp; นำผลการประเมินของทุกรายวิชาที่สอนในรอบประเมินนั้นมาเฉลี่ย และใช้เกณฑ์ตามระบบประเมินของมหาวิทยาลัย
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 คะแนนเฉลี่ยน้อยกว่า 2.50
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 คะแนนเฉลี่ยมากกว่าหรือเท่ากับ 2.50
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 คะแนนเฉลี่ยมากกว่าหรือเท่ากับ 3.51
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 คะแนนเฉลี่ยมากกว่าหรือเท่ากับ 4.00
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 คะแนนเฉลี่ยมากกว่าหรือเท่ากับ 4.50
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion2" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                            <b style="color:red;">หมายเหตุ</b>
+                                                        </a>
+                                                        <div id="exampleAccordion2" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. นักวิชาการศึกษาทำหน้าที่พิมพ์คะแนนผลการประเมินย้อนหลัง 1 ภาคการศึกษาตามรอบ
+                                                                ประเมินสำหรับข้อราชการและย้อนหลัง 2 ภาคการศึกษาตามรอบการประเมินสำหรับพนักงานมหาวิทยาลัย
+                                                                และสรุปข้อมูลนำเสนอผู้ประเมิน
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                2. ในกรณีที่มีผลการประเมินน้อยกว่า ระดับที่ 3 ให้ผู้รับการประเมินและผู้ประเมินพิจารณาเพื่อประเมินผลสัมฤทธิ์ของงาน
+                                                                ในข้อนี้เป็นพิเศษเนื่องจากอาจารย์ต้องมีผลการประเมินขั้นต่ำไม่น้อยไปกว่า 3.51 ขึ้นไป ตามเกณฑ์มาตรฐานในตัวบ่งชี้
+                                                                ที่ 2.6 ของงานประกันคุณภาพการศึกษา
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.3</td>
+
+                                            <td>
+                                                <b>ความตรงเวลาในการส่งเกรด</b>
+                                                <br>
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 ส่งเกรด I เป็นจำนวนมากหรือส่งเกรดช้ามากกว่า 1 ภาคการศึกษา
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 ส่งเกรดช้า หลังจากวันกำหนดชำระเงินของมหาวิทยาลัยแต่ยังอยู่ภายในภาคการศึกษาถัดไป
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 ส่งเกรดไม่ทันการประชุมสาขา แต่ส่งครบทุกวิชา ก่อนวันกำหนดชำระเงินของมหาวิทยาลัย
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 สามารถนำเกรดบางวิชามาส่งได้ทันการประชุมของสาขา และรายวิชาที่เหลือส่งก่อนวันกำหนดชำระเงินของมหาวิทยาลัย
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 สามารถนำเกรดทุกวิชามาส่งได้ทันการประชุมของสาขา
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion3" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                            <b style="color:red;">หมายเหตุ</b>
+                                                        </a>
+                                                        <div id="exampleAccordion3" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. นักวิชาการศึกษาเป็นผู้เก็บข้อมูลการส่งเกรด
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                2. นับเฉพาะภาคเรียนปกติ เนื่องจากคณาจารย์บางท่านอาจจะไม่มีภาระงานสอนในช่วงภาคฤดูร้อน
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                3. คณะฯ จะดาเนินการแจ้งปฏิทิน กาหนดเวลาในการส่งเกรด ตามความเหมาะสมให้อาจารย์ได้ทราบ กล่าวคือ
+                                                                ในกรณีที่มีการสอบในสัปดาห์สุดท้ายในรายวิชานั้นจะเหลือเวลาตรวจข้อสอบเพียง ๑ สัปดาห์
+                                                                (กรณีเป็นรายวิชาที่มีความเกี่ยวข้องต่อเนื่องกัน ต้องบูรณาการกัน ไม่สามารถตัดสินผลในภาคเรียนนั้นได้
+                                                                ให้ทางผู้สอนทาบันทึกข้อความถึงคณะฯ เพื่อทางคณะฯ จะดาเนินการแจ้งมหาวิทยาลัยให้ทราบถึงความจาเป็นต่อไป)
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                4. เนื่องจากวันสุดท้ายของการส่งผลการเรียนในแต่ละภาคการศึกษาอาจไม่อยู่ในช่วงการประเมินผลการปฏิบัติงาน ดังนั้น
+                                                                ในการประเมินจะใช้ข้อมูลของการส่งเกรดในภาคเรียนก่อนหน้ามาพิจารณาดังนี้
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                &emsp; 4.1 กรณีข้าราชการ ใช้ข้อมูลการส่งเกรดในภาคเรียนที่ 1 สาหรับการประเมินในรอบ 1 ต.ค. ถึง 31 มี.ค.
+                                                                และใช้ข้อมูลการส่งเกรดในภาคเรียนที่ 2 สาหรับการประเมินในรอบ 1 เม.ย. ถึง 30 ก.ย.
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                &emsp;4.2 กรณีพนักงานมหาวิทยาลัย ให้ใช้ข้อมูลการส่งเกรดจานวน 2 ภาคเรียนก่อนหน้ามาประกอบการพิจารณา เช่น ณ
+                                                                วันที่ 30 กย. 56 ให้นาข้อมูลการส่งเกรดของภาคเรียนที่ 1/55 และภาคเรียนที่ 2/55
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                &emsp;4.3 ให้ใช้เกณฑ์เฉลี่ยในการคานวณคะแนนในรอบการประเมิน หากมีเศษให้ปัดขึ้น เช่น ภาคเรียนที่ 1
+                                                                ไม่ส่งเลย ภาคเรียนที่ 2 ส่งบางรายวิชา ให้นาระดับคะแนนในแต่ละภาคการศึกษามาหาค่าเฉลี่ย ดังนี้ (1 + 2) / 2 = 1.5 ให้ปัดขึ้นเป็น 2.0
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                5. ในกรณีที่มีการส่งเกรดช้า สามารถให้ผู้รับการประเมิน สามารถที่จะชี้แจงเหตุผลกับผู้ประเมินได้ ทั้งนี้ให้แจ้งในที่ประชุมติดตาม มคอ. 3 ของสาขาวิชา
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.4</td>
+
+                                            <td>
+                                                <b>ความตรงเวลาในการส่ง มคอ. 3 และ มคอ. 5</b>
+                                                <br>
+
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 ส่ง มคอ. 3 และ มคอ. 5 ช้ามากกว่า 1 ภาคการศึกษา
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 ส่ง มคอ. 3 และ มคอ. 5 ช้า หลักจากวันเปิดภาคการศึกษา
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 ส่ง มคอ. 3 และ มคอ. 5 ไม่ทันการประชุมสาขาวิชาแต่ส่งครบทุกวิชา ก่อนวันเปิดภาคการศึกษา
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 สามารถนำส่ง มคอ. 3 และ มคอ. 5 บางวิชาได้ทันการประชุมของสาขาวิชา และรายวิชาที่เหลือส่งก่อน
+                                                                วันเปิดภาคการศึกษา
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 สามารถนำส่ง มคอ. 3 และ มคอ. 5 ทุกวิชาได้ทันการประชุมของสาขาวิชา
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion4" aria-expanded="true" aria-controls="exampleAccordion1">
+                                                            <b style="color:red;">หมายเหตุ</b>
+                                                        </a>
+                                                        <div id="exampleAccordion4" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. การประชุมสาขาวิชาจะดำเนินการก่อนวันเปิดภาคการศึกษา (จะมีการวางแผนจัดรายวิชาสอนแก่คณาจารย์สำหรับภาคปลายในเดือน
+                                                                ตุลาคม และ สำหรับภาคต้นในเดือนพฤษภาคม)
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                2. รายวิชาใดที่ไม่สามารถส่ง มคอ. 5 ได้ทันตามเวลาที่กำหนด โดยมีเหตุผลสมควร ขอให้แจ้งในการประชุมสาขาวิชาเพื่อพิจารณา มคอ. 3
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" id="kpi2" role="tabpanel" style="padding: 0 0 0 0;">
+                <div class="card" style="margin-bottom: 0px;">
+
+                    <div class="card-body">
+                        <div class="text-center" style="margin-bottom: 20px; font-size: 20px;">
+                            ผลรวม KPI พิเศษ คิดเป็น 15% จากทั้งหมด 70%
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-right">
+                                    <select class="form-control" id="#" style="margin-bottom: 20px;">
+                                        <option>1. ภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม</option>
+                                        <option>2. ภาระงานพิเศษเฉพาะบุคคล</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <b>1. ภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม (ร้อยละ 10)</b>
+                            </div>
+
+                            <div class="card-body">
+
+                                <table class="table table-responsive-sm table-hover table-outline mb-0 table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th class="text-center" style="width:5%;"> ลำดับ </th>
+                                            <th class="text-center" width="55%"> ตัวชี้วัด </th>
+                                            @*<th class="text-center" width="12%"> ข้อมูลพื้นฐาน </th>*@
+                                            <th class="text-center" width="12%"> น้ำหนัก </th>
+                                            <th class="text-center" width="12%"> ค่าคะแนน </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center" rowspan="2">1.1</td>
+
+                                            <td>
+                                                <b>ข้อตกลงพิเศษรายบุคคลที่สอดคล้องกับพันธกิจของส่วนงาน เพื่อส่งเสริมการพัฒนาคณะร่วมกัน</b>
+                                                <br>
+                                                <div class="form-group row">
+                                                    <div class="col-md-9 col-form-label">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio1" id="radio1" name="radios">
+                                                            <label class="form-check-label" for="radio1">
+                                                                ระดับที่ 1 ภาระงานพิเศษไม่เกิน 80 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio2" name="radios">
+                                                            <label class="form-check-label" for="radio2">
+                                                                ระดับที่ 2 ภาระงานพิเศษไม่เกิน 160 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 3 ภาระงานพิเศษไม่เกิน 240 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 4 ภาระงานพิเศษไม่เกิน 320 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio" value="radio2" id="radio3" name="radios">
+                                                            <label class="form-check-label" for="radio3">
+                                                                ระดับที่ 5 ภาระงานพิเศษไม่น้อยกว่า 320 ภาระงาน
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                            <td>
+                                                <input type="text" class="form-control" id="name">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                <div id="exampleAccordion" data-children=".item">
+                                                    <div class="item">
+                                                        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion5" aria-expanded="true" aria-controls="exampleAccordion5">
+                                                            <b style="color:red;">หมายเหตุ</b> การคำนวณภาระงานตาม KPI พิเศษ
+                                                        </a>
+                                                        <div id="exampleAccordion5" class="collapsed collapse" role="tabpanel">
+                                                            <p class="mb-3">
+                                                                1. การคานวณ KPI พิเศษจะอิงตามภาระงานตามประกาศมาตรฐานภาระงาน
+                                                                ทางวิชาการของคณาจารย์ประจา คณะวิท/ยาการสารสนเทศ พ.ศ. 2559 <br>
+                                                                สรุปภาระงานตามประกาศมาตรฐานภาระงานทางวิชาการของคณาจารย์ประจำ คณะวิทยาการสารสนเทศ พ.ศ. 2559 <br>
+                                                            </p>
+                                                            @*<table class="table table-responsive-sm table-bordered">
+                                                                    <thead>
+                                                                        <tr></tr>
+                                                                        <tr>จำนวนหน่วย ชม.</tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            1. ภาระงานสอน*
+                                                                        </tr>
+                                                                        <tr>
+                                                                            2. ภาระงานวิจัย*
+                                                                        </tr>
+                                                                        <tr>
+                                                                            3. ภาระงานบริการวิชาการ
+                                                                        </tr>
+                                                                        <tr>
+                                                                            4. ยุทธศาสตร์/การมีส่วนร่วมกับองค์กร
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>*@
+
+                                                            <p class="mb-3">
+                                                                2. การคำนวณภาระงานพิเศษส่งเสริมการทำงานร่วมกันเป็นทีม ให้คำนวณดังนี้ <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 1 จะได้รับสัดส่วนภาระงานเท่ากับ 2% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 2 จะได้รับสัดส่วนภาระงานเท่ากับ 4% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 3 จะได้รับสัดส่วนภาระงานเท่ากับ 6% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 4 จะได้รับสัดส่วนภาระงานเท่ากับ 8% จาก 10% <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 5 จะได้รับสัดส่วนภาระงานเท่ากับ 10% จาก 10% <br>
+                                                            </p>
+                                                            <p class="mb-3">
+                                                                3. การคานวณภาระงานพิเศษเฉพาะบุคคล ให้คานวณดังนี้ <br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 1 จะได้รับสัดส่วนภาระงานเท่ากับ 1% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 2 จะได้รับสัดส่วนภาระงานเท่ากับ 2% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 3 จะได้รับสัดส่วนภาระงานเท่ากับ 3% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 4 จะได้รับสัดส่วนภาระงานเท่ากับ 4% จาก 5%<br>
+                                                                &emsp; ถ้ามีผลงานเท่ากับระดับที่ 5 จะได้รับสัดส่วนภาระงานเท่ากับ 5% จาก 5%<br>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2" align='right'>
+                                                ผลรวม
+                                            </td>
+                                            <td>100</td>
+                                            <td>...</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <p>
+                                    <b style="color:red;">หมายเหตุ</b>
+                                    <br>
+                                    &emsp; 1. การกาหนด KPI และการประเมินผล KPI จะพิจารณากลั่นกรองโดยคณะกรรมการกลั่นกรองผลการปฏิบัติงานตามสาขาวิชา แล้วเสนอกลั่นกรองในที่ประชุมคณะกรรมการบริหารคณะฯ <br>
+                                    &emsp; 2. การแก้ไขหรือปรับแก้ KPI จะสามารถกระทาได้ในช่วงเวลาระหว่างเดือนเมษายน – มิถุนายนเท่านั้น <br>
+                                    &emsp; 3. บุคลากรจะถูกประเมินผลการปฏิบัติงานทุกด้าน ตั้งแต่ด้านที่ 1 – 4 ของหมวด KPI หลัก โดยสามารถเลือกกาหนดค่าน้าหนักเองได้เฉพาะด้านที่ 2 – 4 <br>
+                                    &emsp; 4. สาหรับเกณฑ์ในแต่ละด้านของ KPI หลัก บุคลากรสามารถเลือกดาเนินการเกณฑ์ย่อยใดก็ได้ แต่ผลรวมของค่าน้าหนักของเกณฑ์ย่อยจะต้องไม่เกินกว่าค่าน้าหนักที่กาหนดไว้ในด้านนั้น <br>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

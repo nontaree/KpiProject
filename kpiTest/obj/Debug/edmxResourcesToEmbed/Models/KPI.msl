@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KPIModelStoreContainer" CdmEntityContainer="KPIEntities">
+    <EntitySetMapping Name="kpi_Ability">
+      <EntityTypeMapping TypeName="KPIModel.kpi_Ability">
+        <MappingFragment StoreEntitySet="kpi_Ability">
+          <ScalarProperty Name="KAB_ID" ColumnName="KAB_ID" />
+          <ScalarProperty Name="KAB_Desc" ColumnName="KAB_Desc" />
+          <ScalarProperty Name="KAB_Comment" ColumnName="KAB_Comment" />
+          <ScalarProperty Name="KAB_Group" ColumnName="KAB_Group" />
+          <ScalarProperty Name="KAP_ID" ColumnName="KAP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_AbilityGrade">
+      <EntityTypeMapping TypeName="KPIModel.kpi_AbilityGrade">
+        <MappingFragment StoreEntitySet="kpi_AbilityGrade">
+          <ScalarProperty Name="KAG_ID" ColumnName="KAG_ID" />
+          <ScalarProperty Name="KAG_TotalScore" ColumnName="KAG_TotalScore" />
+          <ScalarProperty Name="KAG_SumScore" ColumnName="KAG_SumScore" />
+          <ScalarProperty Name="KAG_Status" ColumnName="KAG_Status" />
+          <ScalarProperty Name="KAG_Comment1" ColumnName="KAG_Comment1" />
+          <ScalarProperty Name="KAG_Comment2" ColumnName="KAG_Comment2" />
+          <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_AbilityRate">
+      <EntityTypeMapping TypeName="KPIModel.kpi_AbilityRate">
+        <MappingFragment StoreEntitySet="kpi_AbilityRate">
+          <ScalarProperty Name="KAR_ID" ColumnName="KAR_ID" />
+          <ScalarProperty Name="KAR_AbilScore" ColumnName="KAR_AbilScore" />
+          <ScalarProperty Name="KAR_Score" ColumnName="KAR_Score" />
+          <ScalarProperty Name="KAR_Status" ColumnName="KAR_Status" />
+          <ScalarProperty Name="KAR_Date" ColumnName="KAR_Date" />
+          <ScalarProperty Name="KAR_UploadFlie" ColumnName="KAR_UploadFlie" />
+          <ScalarProperty Name="KAS__ID" ColumnName="KAS__ID" />
+          <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_AbilitySet">
+      <EntityTypeMapping TypeName="KPIModel.kpi_AbilitySet">
+        <MappingFragment StoreEntitySet="kpi_AbilitySet">
+          <ScalarProperty Name="KAS_ID" ColumnName="KAS_ID" />
+          <ScalarProperty Name="KAS_LenghtScore" ColumnName="KAS_LenghtScore" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+          <ScalarProperty Name="KAB_ID" ColumnName="KAB_ID" />
+          <ScalarProperty Name="KSA_ID" ColumnName="KSA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_AbilityType">
+      <EntityTypeMapping TypeName="KPIModel.kpi_AbilityType">
+        <MappingFragment StoreEntitySet="kpi_AbilityType">
+          <ScalarProperty Name="KAP_ID" ColumnName="KAP_ID" />
+          <ScalarProperty Name="KAP_Desc" ColumnName="KAP_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_Perfomance">
+      <EntityTypeMapping TypeName="KPIModel.kpi_Perfomance">
+        <MappingFragment StoreEntitySet="kpi_Perfomance">
+          <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+          <ScalarProperty Name="KPM_Event" ColumnName="KPM_Event" />
+          <ScalarProperty Name="KPM_FPercent" ColumnName="KPM_FPercent" />
+          <ScalarProperty Name="KPM_SPercent" ColumnName="KPM_SPercent" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_PerfomanceKey">
+      <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceKey">
+        <MappingFragment StoreEntitySet="kpi_PerfomanceKey">
+          <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+          <ScalarProperty Name="KPK_Number" ColumnName="KPK_Number" />
+          <ScalarProperty Name="KPK_Name" ColumnName="KPK_Name" />
+          <ScalarProperty Name="KPK_Comment" ColumnName="KPK_Comment" />
+          <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_PerfomanceLevel">
+      <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceLevel">
+        <MappingFragment StoreEntitySet="kpi_PerfomanceLevel">
+          <ScalarProperty Name="KPL_ID" ColumnName="KPL_ID" />
+          <ScalarProperty Name="KPL_Number" ColumnName="KPL_Number" />
+          <ScalarProperty Name="KPL_Desc" ColumnName="KPL_Desc" />
+          <ScalarProperty Name="KPL_MaxWeight" ColumnName="KPL_MaxWeight" />
+          <ScalarProperty Name="KPL_MinWeight" ColumnName="KPL_MinWeight" />
+          <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_PerfomanceRate">
+      <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceRate">
+        <MappingFragment StoreEntitySet="kpi_PerfomanceRate">
+          <ScalarProperty Name="KPR_ID" ColumnName="KPR_ID" />
+          <ScalarProperty Name="KPR_ScoreTech" ColumnName="KPR_ScoreTech" />
+          <ScalarProperty Name="KPR_ScoreDean" ColumnName="KPR_ScoreDean" />
+          <ScalarProperty Name="KPR_File" ColumnName="KPR_File" />
+          <ScalarProperty Name="KPR_Comment" ColumnName="KPR_Comment" />
+          <ScalarProperty Name="KPR_PerScore" ColumnName="KPR_PerScore" />
+          <ScalarProperty Name="KPR_StatusTech" ColumnName="KPR_StatusTech" />
+          <ScalarProperty Name="KPR_StatusDean" ColumnName="KPR_StatusDean" />
+          <ScalarProperty Name="KSG_ID" ColumnName="KSG_ID" />
+          <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_PerfomanceType">
+      <EntityTypeMapping TypeName="KPIModel.kpi_PerfomanceType">
+        <MappingFragment StoreEntitySet="kpi_PerfomanceType">
+          <ScalarProperty Name="KPT_ID" ColumnName="KPT_ID" />
+          <ScalarProperty Name="KPT_Desc" ColumnName="KPT_Desc" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_SetGoal">
+      <EntityTypeMapping TypeName="KPIModel.kpi_SetGoal">
+        <MappingFragment StoreEntitySet="kpi_SetGoal">
+          <ScalarProperty Name="KSG_ID" ColumnName="KSG_ID" />
+          <ScalarProperty Name="KSG_UpGoal" ColumnName="KSG_UpGoal" />
+          <ScalarProperty Name="KSG_Status" ColumnName="KSG_Status" />
+          <ScalarProperty Name="KSG_PerWeight" ColumnName="KSG_PerWeight" />
+          <ScalarProperty Name="KSG_SetDate" ColumnName="KSG_SetDate" />
+          <ScalarProperty Name="KSG_IPAdress" ColumnName="KSG_IPAdress" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+          <ScalarProperty Name="KPM_ID" ColumnName="KPM_ID" />
+          <ScalarProperty Name="KPK_ID" ColumnName="KPK_ID" />
+          <ScalarProperty Name="KPL_ID" ColumnName="KPL_ID" />
+          <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_StatusAbility">
+      <EntityTypeMapping TypeName="KPIModel.kpi_StatusAbility">
+        <MappingFragment StoreEntitySet="kpi_StatusAbility">
+          <ScalarProperty Name="KSA_ID" ColumnName="KSA_ID" />
+          <ScalarProperty Name="KSA_Desc" ColumnName="KSA_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_Total">
+      <EntityTypeMapping TypeName="KPIModel.kpi_Total">
+        <MappingFragment StoreEntitySet="kpi_Total">
+          <ScalarProperty Name="KPTT_ID" ColumnName="KPTT_ID" />
+          <ScalarProperty Name="KPTT_PerTotal" ColumnName="KPTT_PerTotal" />
+          <ScalarProperty Name="KPTT_Percent" ColumnName="KPTT_Percent" />
+          <ScalarProperty Name="KPTT_AbliTotal" ColumnName="KPTT_AbliTotal" />
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kpi_Year">
+      <EntityTypeMapping TypeName="KPIModel.kpi_Year">
+        <MappingFragment StoreEntitySet="kpi_Year">
+          <ScalarProperty Name="KPY_ID" ColumnName="KPY_ID" />
+          <ScalarProperty Name="KPY_Name" ColumnName="KPY_Name" />
+          <ScalarProperty Name="KPY_StartDate" ColumnName="KPY_StartDate" />
+          <ScalarProperty Name="KPY_EndDate" ColumnName="KPY_EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="KPIModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="umsgroups">
+      <EntityTypeMapping TypeName="KPIModel.umsgroup">
+        <MappingFragment StoreEntitySet="umsgroup">
+          <ScalarProperty Name="umg_ID" ColumnName="umg_ID" />
+          <ScalarProperty Name="umg_Name" ColumnName="umg_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="umsusers">
+      <EntityTypeMapping TypeName="KPIModel.umsuser">
+        <MappingFragment StoreEntitySet="umsuser">
+          <ScalarProperty Name="ums_ID" ColumnName="ums_ID" />
+          <ScalarProperty Name="ums_Name" ColumnName="ums_Name" />
+          <ScalarProperty Name="ums_Surname" ColumnName="ums_Surname" />
+          <ScalarProperty Name="ums_Login" ColumnName="ums_Login" />
+          <ScalarProperty Name="ums_Password" ColumnName="ums_Password" />
+          <ScalarProperty Name="umg_ID" ColumnName="umg_ID" />
+          <ScalarProperty Name="ums_FName" ColumnName="ums_FName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

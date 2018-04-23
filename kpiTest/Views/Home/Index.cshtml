@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Name"] = "เมนูหลัก";
+}
+
+<style>
+    .card:hover {
+        background-color: #f0f5f5;
+    }
+</style>
+
+<div class="animated fadeIn">
+    <div class="row">
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    เจ้าหน้าที่ฝ่ายสนับสนุน
+                </div>
+                <div class="card-body">
+                    <img src="/Content/images/menu/network.png" height="60" width="60">
+                    เจ้าหน้าที่ฝ่ายสนับสนุน
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <a href='@Url.Action("MenuTeacher","Home")'>
+                <div class="card">
+                    <div class="card-header">
+                        อาจารย์
+                    </div>
+                    <div class="card-body">
+                        <img src="/Content/images/menu/network.png" height="60" width="60">
+                        อาจารย์
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    ผู้ประเมิน
+                </div>
+                <div class="card-body">
+                    <img src="/Content/images/menu/network.png" height="60" width="60">
+                    ผู้ประเมิน
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
