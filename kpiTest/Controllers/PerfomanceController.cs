@@ -140,7 +140,7 @@ namespace kpiTest.Controllers
             }
             ViewBag.EventKpi = (IEnumerable<SelectListItem>)test;
 
-            TempData["CL_REF_NO_TEMP"] = cLIS_HEADER.CL_REFERENCE_NO;
+            //TempData["CL_REF_NO_TEMP"] = cLIS_HEADER.CL_REFERENCE_NO;
             //var refNo = (string)TempData["CL_REF_NO_TEMP"];
             //ViewBag.KP = TempData["CL_REF_NO_TEMP"];
 
